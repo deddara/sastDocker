@@ -1,0 +1,900 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="http://findbugs.sourceforge.net">FindBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>FindBugs version: 3.0.1</p>
+<p>Code analyzed:</p>
+<ul>
+<li>src</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>984 lines of code analyzed,
+	in 35 classes, 
+	in 2 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">4.07</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">26</td>
+<td align="right">26.42</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>30</b>
+</td>
+<td align="right">
+<b>30.49</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</li>
+<li>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</li>
+<li>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</li>
+<li>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</li>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_I18N">Internationalization Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">3</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>30</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66053');">
+<td>
+<span class="priority-2">OS</span>
+</td>
+<td>org.apache.maven.wrapper.Installer.setExecutablePermissions(File) may fail to close stream</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66053" style="display: none;">
+<a href="#OS_OPEN_STREAM">Bug type OS_OPEN_STREAM (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.setExecutablePermissions(File)<br/>Need to close java.io.Reader <br/>At Installer.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65689');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Exceptional return value of java.io.File.mkdirs() ignored in org.apache.maven.wrapper.DefaultDownloader.download(URI, File)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65689" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Bug type RV_RETURN_VALUE_IGNORED_BAD_PRACTICE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.DefaultDownloader<br/>In method org.apache.maven.wrapper.DefaultDownloader.download(URI, File)<br/>Called method java.io.File.mkdirs()<br/>At DefaultDownloader.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66534');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Exceptional return value of java.io.File.delete() ignored in org.apache.maven.wrapper.Installer.createDist(WrapperConfiguration)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66534" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Bug type RV_RETURN_VALUE_IGNORED_BAD_PRACTICE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.createDist(WrapperConfiguration)<br/>Called method java.io.File.delete()<br/>At Installer.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66604');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Exceptional return value of java.io.File.renameTo(File) ignored in org.apache.maven.wrapper.Installer.createDist(WrapperConfiguration)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66604" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Bug type RV_RETURN_VALUE_IGNORED_BAD_PRACTICE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.createDist(WrapperConfiguration)<br/>Called method java.io.File.renameTo(File)<br/>At Installer.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66674');">
+<td>
+<span class="priority-2">RV</span>
+</td>
+<td>Exceptional return value of java.io.File.mkdirs() ignored in org.apache.maven.wrapper.Installer.unzip(File, File)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66674" style="display: none;">
+<a href="#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">Bug type RV_RETURN_VALUE_IGNORED_BAD_PRACTICE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.unzip(File, File)<br/>Called method java.io.File.mkdirs()<br/>At Installer.java:[line 169]<br/>Another occurrence at Installer.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67698');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.maven.wrapper.cli.CommandLineParser$CaseInsensitiveStringComparator implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67698" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.cli.CommandLineParser$CaseInsensitiveStringComparator<br/>At CommandLineParser.java:[lines 1-515]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67733');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.maven.wrapper.cli.CommandLineParser$OptionComparator implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67733" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.cli.CommandLineParser$OptionComparator<br/>At CommandLineParser.java:[lines 1-505]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67768');">
+<td>
+<span class="priority-2">Se</span>
+</td>
+<td>org.apache.maven.wrapper.cli.CommandLineParser$OptionStringComparator implements Comparator but not Serializable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67768" style="display: none;">
+<a href="#SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">Bug type SE_COMPARATOR_SHOULD_BE_SERIALIZABLE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.cli.CommandLineParser$OptionStringComparator<br/>At CommandLineParser.java:[lines 1-529]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_I18N">Internationalization Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67629');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in new org.apache.maven.wrapper.cli.CommandLineParser(): new java.io.OutputStreamWriter(OutputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67629" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br/>In class org.apache.maven.wrapper.cli.CommandLineParser<br/>In method new org.apache.maven.wrapper.cli.CommandLineParser()<br/>Called method new java.io.OutputStreamWriter(OutputStream)<br/>At CommandLineParser.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65838');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.maven.wrapper.Installer.setExecutablePermissions(File): new java.io.InputStreamReader(InputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65838" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.setExecutablePermissions(File)<br/>Called method new java.io.InputStreamReader(InputStream)<br/>At Installer.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67002');">
+<td>
+<span class="priority-1">Dm</span>
+</td>
+<td>Found reliance on default encoding in org.apache.maven.wrapper.PathAssembler.getMd5Hash(String): String.getBytes()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67002" style="display: none;">
+<a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+<br/>In class org.apache.maven.wrapper.PathAssembler<br/>In method org.apache.maven.wrapper.PathAssembler.getMd5Hash(String)<br/>Called method String.getBytes()<br/>At PathAssembler.java:[line 60]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">DP</span>
+</td>
+<td>org.apache.maven.wrapper.BootstrapMainStarter.start(String[], File) creates a java.net.URLClassLoader classloader, which should be performed within a doPrivileged block</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED">Bug type DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED (click for details)</a>
+<br/>In class org.apache.maven.wrapper.BootstrapMainStarter<br/>In method org.apache.maven.wrapper.BootstrapMainStarter.start(String[], File)<br/>In class java.net.URLClassLoader<br/>At BootstrapMainStarter.java:[line 29]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67447');">
+<td>
+<span class="priority-2">SIC</span>
+</td>
+<td>Should org.apache.maven.wrapper.PathAssembler$LocalDistribution be a _static_ inner class?</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67447" style="display: none;">
+<a href="#SIC_INNER_SHOULD_BE_STATIC">Bug type SIC_INNER_SHOULD_BE_STATIC (click for details)</a>
+<br/>In class org.apache.maven.wrapper.PathAssembler$LocalDistribution<br/>At PathAssembler.java:[lines 100-116]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67482');">
+<td>
+<span class="priority-2">WMI</span>
+</td>
+<td>org.apache.maven.wrapper.SystemPropertiesHandler.getSystemProperties(File) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67482" style="display: none;">
+<a href="#WMI_WRONG_MAP_ITERATOR">Bug type WMI_WRONG_MAP_ITERATOR (click for details)</a>
+<br/>In class org.apache.maven.wrapper.SystemPropertiesHandler<br/>In method org.apache.maven.wrapper.SystemPropertiesHandler.getSystemProperties(File)<br/>At SystemPropertiesHandler.java:[line 55]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65759');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65759" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.setExecutablePermissions(File)<br/>At Installer.java:[line 110]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>At Installer.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67389');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>MD5 is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67389" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.apache.maven.wrapper.PathAssembler<br/>In method org.apache.maven.wrapper.PathAssembler.getMd5Hash(String)<br/>At PathAssembler.java:[line 59]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66119');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66119" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.createDist(WrapperConfiguration)<br/>At Installer.java:[line 61]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Unknown source java/lang/StringBuilder.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/String.valueOf(Ljava/lang/Object;)Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At Installer.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66218');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66218" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.deleteDir(File)<br/>At Installer.java:[line 146]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At Installer.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66297');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66297" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.unzip(File, File)<br/>At Installer.java:[line 169]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At Installer.java:[line 169]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66376');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66376" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.unzip(File, File)<br/>At Installer.java:[line 173]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At Installer.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66455');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66455" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.unzip(File, File)<br/>At Installer.java:[line 174]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At Installer.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66755');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66755" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.MavenWrapperMain<br/>In method org.apache.maven.wrapper.MavenWrapperMain.mavenUserHome()<br/>At MavenWrapperMain.java:[line 121]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66819');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66819" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.MavenWrapperMain<br/>In method org.apache.maven.wrapper.MavenWrapperMain.wrapperJar()<br/>At MavenWrapperMain.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URI.getPath()Ljava/lang/String;<br/>Unknown source java/security/CodeSource.getLocation()Ljava/net/URL;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At MavenWrapperMain.java:[line 82]<br/>At MavenWrapperMain.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66918');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66918" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.MavenWrapperMain<br/>In method org.apache.maven.wrapper.MavenWrapperMain.wrapperProperties(File)<br/>At MavenWrapperMain.java:[line 76]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source java/lang/String.replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>At MavenWrapperMain.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67071');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67071" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.PathAssembler<br/>In method org.apache.maven.wrapper.PathAssembler.getDistribution(WrapperConfiguration)<br/>At PathAssembler.java:[line 47]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source org/apache/maven/wrapper/PathAssembler.removeExtension(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/String.valueOf(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/maven/wrapper/PathAssembler.getDistName(Ljava/net/URI;)Ljava/lang/String;<br/>Unknown source org/apache/maven/wrapper/WrapperConfiguration.getDistributionPath()Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Unknown source org/apache/maven/wrapper/WrapperConfiguration.getDistribution()Ljava/net/URI;<br/>Unknown source org/apache/maven/wrapper/PathAssembler.rootDirName(Ljava/lang/String;Lorg/apache/maven/wrapper/WrapperConfiguration;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At PathAssembler.java:[line 44]<br/>At PathAssembler.java:[line 45]<br/>At PathAssembler.java:[line 46]<br/>At PathAssembler.java:[line 47]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67225');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67225" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.PathAssembler<br/>In method org.apache.maven.wrapper.PathAssembler.getDistribution(WrapperConfiguration)<br/>At PathAssembler.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source java/lang/String.valueOf(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/maven/wrapper/WrapperConfiguration.getZipPath()Ljava/lang/String;<br/>Unknown source org/apache/maven/wrapper/PathAssembler.removeExtension(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/maven/wrapper/PathAssembler.rootDirName(Ljava/lang/String;Lorg/apache/maven/wrapper/WrapperConfiguration;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Unknown source java/lang/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Unknown source org/apache/maven/wrapper/PathAssembler.getDistName(Ljava/net/URI;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;<br/>Unknown source org/apache/maven/wrapper/WrapperConfiguration.getDistribution()Ljava/net/URI;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At PathAssembler.java:[line 44]<br/>At PathAssembler.java:[line 45]<br/>At PathAssembler.java:[line 46]<br/>At PathAssembler.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67535');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67535" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.wrapper.WrapperExecutor<br/>In method org.apache.maven.wrapper.WrapperExecutor.prepareDistributionUri()<br/>At WrapperExecutor.java:[line 81]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Unknown source org/apache/maven/wrapper/WrapperExecutor.readDistroUrl()Ljava/net/URI;<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At WrapperExecutor.java:[line 78]<br/>At WrapperExecutor.java:[line 81]</p>
+</td>
+</tr>
+</table>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65616');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference in org.apache.maven.wrapper.BootstrapMainStarter.findLauncherJar(File) due to return value of called method</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65616" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.BootstrapMainStarter<br/>In method org.apache.maven.wrapper.BootstrapMainStarter.findLauncherJar(File)<br/>Value loaded from ?<br/>Dereferenced at BootstrapMainStarter.java:[line 45]<br/>Known null at BootstrapMainStarter.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65907');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference in org.apache.maven.wrapper.Installer.deleteDir(File) due to return value of called method</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65907" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.deleteDir(File)<br/>Value loaded from children<br/>Dereferenced at Installer.java:[line 145]<br/>Known null at Installer.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65980');">
+<td>
+<span class="priority-2">NP</span>
+</td>
+<td>Possible null pointer dereference in org.apache.maven.wrapper.Installer.listDirs(File) due to return value of called method</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65980" style="display: none;">
+<a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+<br/>In class org.apache.maven.wrapper.Installer<br/>In method org.apache.maven.wrapper.Installer.listDirs(File)<br/>Value loaded from ?<br/>Dereferenced at Installer.java:[line 94]<br/>Known null at Installer.java:[line 94]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+</h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      
+<h2>
+<a name="DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED">DP_CREATE_CLASSLOADER_INSIDE_DO_PRIVILEGED: Classloaders should only be created inside doPrivileged block</a>
+</h2>
+
+  <p> This code creates a classloader,  which needs permission if a security manage is installed.
+  If this code might be invoked by code that does not
+  have security permissions, then the classloader creation needs to occur inside a doPrivileged block.</p>
+
+    
+<h2>
+<a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
+</h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   
+<h2>
+<a name="OS_OPEN_STREAM">OS_OPEN_STREAM: Method may fail to close stream</a>
+</h2>
+
+<p> The method creates an IO stream object, does not assign it to any
+fields, pass it to other methods that might close it,
+or return it, and does not appear to close
+the stream on all paths out of the method.&nbsp; This may result in
+a file descriptor leak.&nbsp; It is generally a good
+idea to use a <code>finally</code> block to ensure that streams are
+closed.</p>
+
+    
+<h2>
+<a name="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">RV_RETURN_VALUE_IGNORED_BAD_PRACTICE: Method ignores exceptional return value</a>
+</h2>
+
+   <p> This method returns a value that is not checked. The return value should be checked
+since it can indicate an unusual or unexpected function execution. For
+example, the <code>File.delete()</code> method returns false
+if the file could not be successfully deleted (rather than
+throwing an Exception).
+If you don't check the result, you won't notice if the method invocation
+signals unexpected behavior by returning an atypical return value.
+</p>
+
+    
+<h2>
+<a name="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE">SE_COMPARATOR_SHOULD_BE_SERIALIZABLE: Comparator doesn't implement Serializable</a>
+</h2>
+
+  <p> This class implements the <code>Comparator</code> interface. You
+should consider whether or not it should also implement the <code>Serializable</code>
+interface. If a comparator is used to construct an ordered collection
+such as a <code>TreeMap</code>, then the <code>TreeMap</code>
+will be serializable only if the comparator is also serializable.
+As most comparators have little or no state, making them serializable
+is generally easy and good defensive programming.
+</p>
+
+    
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf">NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="http://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="http://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar1.pdf">NIST: Transitions: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="http://csrc.nist.gov/publications/nistpubs/800-132/nist-sp800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="http://stackoverflow.com/questions/22580853/reliable-implementation-of-pbkdf2-hmac-sha256-for-java">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter. 
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="http://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="http://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="SIC_INNER_SHOULD_BE_STATIC">SIC_INNER_SHOULD_BE_STATIC: Should be a static inner class</a>
+</h2>
+
+  <p> This class is an inner class, but does not use its embedded reference
+  to the object which created it.&nbsp; This reference makes the instances
+  of the class larger, and may keep the reference to the creator object
+  alive longer than necessary.&nbsp; If possible, the class should be
+   made static.
+</p>
+
+    
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR: Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        </body>
+</html>
